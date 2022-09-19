@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+
+\title{Translational to Angular Conversions}
+
+\begin{document}
+    \maketitle
+
+    \section{Lookup}
+    
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c|cl}
+            $x$ & $\theta$ \\
+            $v$ & $\omega$ \\
+            $a$ & $\alpha$ \\
+            $m$ & $I$ & Moment of inertia \\
+            $F$ & $\tau$ & Torque \\
+            $p$ & $L$ & Angular momentum \\
+        \end{tabular}
+    \end{table}
+    
+    \section{Basic Conversions}
+
+    \begin{equation}
+        \label{eq:moment-of-inertia}
+        I = \sum{mr^2}
+    \end{equation}
+
+    \begin{align}
+        s &= r\theta \\
+        \label{eq:angular-velocity}
+        v &= r\omega = r\dot{\theta} \\
+        a &= r\alpha = r\dot{v} = r\ddot{\theta}
+    \end{align}
+    
+    \begin{align}
+        \label{eq:angular-momentum}
+        L &= I\omega = rp \\
+        \tau &= I\alpha = rF
+    \end{align}
+
+    \subsection{Understanding Angular Momentum}
+    Starting with \autoref{eq:angular-momentum} and using \autoref{eq:moment-of-inertia} and \autoref{eq:angular-velocity}: $$\begin{aligned}
+        L &= I\omega \\
+        &= \frac{v}{r}\sum{mr^2} \\
+        &= vmr, & \text{assuming a single point object} \\
+        &= rp
+    \end{aligned}$$
+
+    \section{Vectors}
+
+    \begin{equation}
+        \vec{L} = \vec{r} \times \vec{p}
+    \end{equation}
+\end{document}
